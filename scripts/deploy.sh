@@ -26,6 +26,9 @@ sed -i "s/database_name_here/$DB_NAME/" /var/www/html/config.php
 sed -i "s/username_here/$DB_USER/" /var/www/html/config.php
 sed -i "s/password_here/$DB_PASSWORD/" /var/www/html/config.php
 
+# Modificamos el script de base de datos
+sed -i "s/lamp_db/$DB_NAME/" /tmp/iaw-practica-lamp/db/database.sql
+
 # Importamos el script de base de datos
 mysql -u root < /tmp/iaw-practica-lamp/db/database.sql
 
