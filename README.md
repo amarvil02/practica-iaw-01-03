@@ -39,7 +39,7 @@ Lo ejecutamos con **sudo ./install_lamp**, no necesitamos darle permisos porque 
 
 Este script, como ya he dicho, nos va a permitir la automatización del proceso de instalación de la aplicación web LAMP. Lo primero que tenemos en este script, son las diez primeras linea del *install_lamp.sh* que tendrán la misma función que en script de LAMP.
 
-Pero de actualizar, tenemos el comando **"source.env"**, este comando incluye las variables que tenemos en el archivo *.env* que nos servirán para configur las variables que nos servirán en comandos posteriores, el contenido de este archivo no es el mismo que en la primera práctica, será:
+Pero antes de actualizar, tenemos el comando **"source.env"**, este comando incluye las variables que tenemos en el archivo *.env* que nos servirán para configurar las variables que nos servirán en comandos posteriores, el contenido de este archivo no es el mismo que en la primera práctica, será:
 
 DB_NAME=aplicacion
 <br>
@@ -77,7 +77,7 @@ mysql -u root <<< "CREATE USER $DB_USER@'%' IDENTIFIED BY '$DB_PASSWORD'"
 <br>
 mysql -u root <<< "GRANT ALL PRIVILEGES ON $DB_NAME.* TO $DB_USER@'%'"
 
-Este comando lo que hace es, primero eliminar usuario si existe el usuario que tenemos en nuestra variable. También, crea usuario identificado por la contraseña asignada en la variable. Y da todos los privilegios al usuario sobre la base de datos.
+Este comando lo que hace es, primero eliminar usuario si existe el usuario que tenemos en nuestra variable. También, crea usuario identificado por la contraseña asignada en la variable y da todos los privilegios al usuario sobre la base de datos.
 
 Para terminar, como siempre, modificamos el grupo y el propietario de */var/www/html* con **"chown -R www-data:www-data /var/www/html"**.
 
